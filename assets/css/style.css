@@ -1,0 +1,492 @@
+/* Custom Styles for Appointment Booking System */
+
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --success-color: #198754;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #0dcaf0;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Hero Section */
+.hero-section {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(102, 126, 234, 0.9) 0%,
+      rgba(118, 75, 162, 0.9) 100%
+    ),
+    url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920")
+      center/cover;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 80px 0;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  margin-bottom: 2.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section .btn {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+.hero-section .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Cards */
+.card {
+  border: none;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  background-color: #fff;
+  border-bottom: 2px solid #f8f9fa;
+  font-weight: 600;
+}
+
+/* Service Cards */
+.service-card {
+  height: 100%;
+  overflow: hidden;
+}
+
+.service-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.service-card:hover .service-card-img {
+  transform: scale(1.05);
+}
+
+.service-card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card .btn {
+  margin-top: auto;
+}
+
+.service-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.service-card-placeholder {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+}
+
+/* Stats Cards */
+.stat-card {
+  border-left: 4px solid var(--primary-color);
+}
+
+.stat-card.success {
+  border-left-color: var(--success-color);
+}
+
+.stat-card.warning {
+  border-left-color: var(--warning-color);
+}
+
+.stat-card.danger {
+  border-left-color: var(--danger-color);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.stat-label {
+  color: #6c757d;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+/* Badges */
+.badge {
+  padding: 0.5em 0.75em;
+  font-weight: 500;
+}
+
+/* Tables */
+.table {
+  background-color: white;
+}
+
+.table thead th {
+  border-bottom: 2px solid #dee2e6;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+/* Forms */
+.form-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Buttons */
+.btn {
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Time Slots */
+.time-slot {
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 2px solid #dee2e6;
+  background-color: #fff;
+}
+
+.time-slot:not(.disabled):hover {
+  border-color: var(--primary-color);
+  background-color: #e7f3ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.time-slot.selected {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+  transform: translateY(-2px);
+}
+
+.time-slot.selected i {
+  color: white;
+}
+
+.time-slot.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #e9ecef;
+}
+
+.time-slot.disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Appointment Status */
+.status-badge {
+  display: inline-block;
+  padding: 0.35em 0.65em;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+}
+
+.status-confirmed {
+  background-color: #d1e7dd;
+  color: #0f5132;
+}
+
+.status-pending {
+  background-color: #fff3cd;
+  color: #664d03;
+}
+
+.status-cancelled {
+  background-color: #f8d7da;
+  color: #842029;
+}
+
+.status-completed {
+  background-color: #cfe2ff;
+  color: #084298;
+}
+
+/* Sidebar (Admin Panel) */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.sidebar {
+  width: 280px;
+  min-height: 100vh;
+  background-color: #212529;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-content {
+  flex: 1;
+  margin-left: 280px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  width: calc(100% - 280px);
+  position: relative;
+  z-index: 1;
+}
+
+.sidebar .nav-link {
+  color: rgba(255, 255, 255, 0.75);
+  padding: 0.75rem 1rem;
+  transition: all 0.3s;
+  border-radius: 0.375rem;
+  margin-bottom: 0.25rem;
+}
+
+.sidebar .nav-link:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav-link.active {
+  color: white;
+  background-color: var(--primary-color);
+}
+
+.sidebar .nav-link i {
+  margin-right: 0.75rem;
+  width: 20px;
+}
+
+@media (max-width: 992px) {
+  .sidebar {
+    position: relative;
+    width: 100% !important;
+  }
+
+  .admin-content {
+    margin-left: 0;
+  }
+
+  .admin-layout {
+    flex-direction: column;
+  }
+}
+
+/* Calendar */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Loading Spinner */
+.spinner-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+/* Alerts */
+.alert {
+  border: none;
+  border-left: 4px solid;
+}
+
+.alert-success {
+  border-left-color: var(--success-color);
+}
+
+.alert-danger {
+  border-left-color: var(--danger-color);
+}
+
+.alert-warning {
+  border-left-color: var(--warning-color);
+}
+
+.alert-info {
+  border-left-color: var(--info-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Booking Steps Progress */
+.step-circle {
+  width: 45px;
+  height: 45px;
+  background: white;
+  border: 3px solid #dee2e6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #dee2e6;
+  transition: all 0.3s;
+}
+
+.step-circle.active {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  background: #e7f3ff;
+  box-shadow: 0 4px 8px rgba(13, 110, 253, 0.2);
+}
+
+.progress-line {
+  background: linear-gradient(
+    to right,
+    var(--primary-color) 0%,
+    var(--primary-color) 33%,
+    #dee2e6 33%,
+    #dee2e6 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .step-circle {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: #212529;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--primary-color);
+}
+
+/* Ensure buttons and interactive elements work properly */
+.btn,
+.btn-group,
+button,
+a {
+  position: relative;
+  z-index: 2;
+}
+
+/* Ensure modals appear above everything */
+.modal {
+  z-index: 1050 !important;
+}
+
+.modal-backdrop {
+  z-index: 1040 !important;
+}
+
+/* Ensure cards and tables allow interaction */
+.card,
+.table-responsive {
+  position: relative;
+  z-index: auto;
+}

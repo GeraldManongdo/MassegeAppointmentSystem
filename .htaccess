@@ -1,0 +1,36 @@
+# Prevent directory browsing
+
+Options -Indexes
+
+# Error pages
+
+ErrorDocument 404 /MassegeAppointmentSystem/index.php
+
+# Protect sensitive files
+
+<FilesMatch "^\.">
+Order allow,deny
+Deny from all
+</FilesMatch>
+
+# Protect config and database files
+
+<FilesMatch "(config\.php|database\.php|\.sql)$">
+Order allow,deny
+Deny from all
+</FilesMatch>
+
+# Enable URL rewriting (optional - for future enhancements)
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /MassegeAppointmentSystem/
+</IfModule>
+
+# PHP Security Settings
+
+<IfModule mod_php7.c>
+    php_flag display_errors Off
+    php_flag log_errors On
+    php_value error_log error_log.txt
+</IfModule>
