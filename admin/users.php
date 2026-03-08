@@ -349,7 +349,7 @@ include '../includes/header.php';
 
             <?php if (!empty($users)): ?>
                 <?php foreach ($users as $user): ?>
-                    <div class="modal fade" id="viewModal<?php echo $user['user_id']; ?>" tabindex="-1">
+                    <div class="modal fade" id="viewModal<?php echo $user['user_id']; ?>" tabindex="1">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -395,7 +395,7 @@ include '../includes/header.php';
                         </div>
                     </div>
                     
-                    <div class="modal fade" id="editModal<?php echo $user['user_id']; ?>" tabindex="-1">
+                    <div class="modal fade" id="editModal<?php echo $user['user_id']; ?>" tabindex="1">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <form method="POST" action="">
@@ -464,7 +464,7 @@ include '../includes/header.php';
     </div>
 </div>
 
-<div class="modal fade" id="addUserModal" tabindex="-1">
+<div class="modal fade" id="addUserModal" tabindex="1">
     <div class="modal-dialog">
         <div class="modal-content">
             <form method="POST" action="">

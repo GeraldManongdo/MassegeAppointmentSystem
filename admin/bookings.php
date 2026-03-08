@@ -289,7 +289,7 @@ include '../includes/header.php';
             
             <?php if (!empty($appointments)): ?>
                 <?php foreach ($appointments as $appointment): ?>
-                    <div class="modal fade" id="viewModal<?php echo $appointment['appointment_id']; ?>" tabindex="-1">
+                    <div class="modal fade" id="viewModal<?php echo $appointment['appointment_id']; ?>" tabindex="1">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">

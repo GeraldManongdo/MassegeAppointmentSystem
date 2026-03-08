@@ -207,7 +207,7 @@ include '../includes/header.php';
             <?php if (!empty($services)): ?>
                 <?php foreach ($services as $svc): ?>
                     <!-- View Modal -->
-                    <div class="modal fade" id="viewModal<?php echo $svc['service_id']; ?>" tabindex="-1">
+                    <div class="modal fade" id="viewModal<?php echo $svc['service_id']; ?>" tabindex="1">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -274,7 +274,7 @@ include '../includes/header.php';
             <?php endforeach; ?>
             <?php foreach ($services as $svc): ?>
                 <!-- Edit Modal -->
-                <div class="modal fade" id="editModal<?php echo $svc['service_id']; ?>" tabindex="-1">
+                <div class="modal fade" id="editModal<?php echo $svc['service_id']; ?>" tabindex="1">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -404,7 +404,7 @@ include '../includes/header.php';
 </div>
 
 <!-- Add Service Modal -->
-<div class="modal fade" id="serviceModal" tabindex="-1">
+<div class="modal fade" id="serviceModal" tabindex="1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-primary text-white">
